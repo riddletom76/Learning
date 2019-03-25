@@ -26,6 +26,26 @@ void PrintLinkedList(Node* head){
     cout<<endl;
 }
 
+bool SearchLinkedListIterave(Node* head, int key){
+    while(head!=NULL){
+        if(head->data == key){
+            return true;
+        }
+        head = head->next;
+    }
+    return false;
+}
+
+bool SearchLinkedListRecursive(Node* head, int key){
+    if(head == NULL){
+        return false;
+    }
+    if(head->data == key){
+        return true;
+    }
+    return SearchLinkedListRecursive(head->next, key);
+}
+
 int main()
 {
     /* code */
@@ -34,7 +54,9 @@ int main()
     head = PushData(head, 20);
     head = PushData(head, 10);
     PrintLinkedList(head);
-    cout<<"element 20 searched in linked list "<<SearchLinkedListIterave(head,20);
-    cout<<"element 20 searched in linked list "<<SearchLinkedListRecursive(head,20);
+    cout<<"element 20 searched in linked list "<<SearchLinkedListIterave(head,20)<<endl;
+    cout<<"element 20 searched in linked list "<<SearchLinkedListRecursive(head,20)<<endl;
+    cout<<"element 40 searched in linked list "<<SearchLinkedListIterave(head,40)<<endl;
+    cout<<"element 40 searched in linked list "<<SearchLinkedListRecursive(head,40)<<endl;
     return 0;
 }
