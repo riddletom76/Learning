@@ -1,3 +1,4 @@
+//http://geeksquiz.com/linked-list-set-2-inserting-a-node/
 #include<iostream>
 using namespace std;
 class Node{

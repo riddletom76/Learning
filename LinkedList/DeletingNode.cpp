@@ -1,3 +1,4 @@
+//http://geeksquiz.com/linked-list-set-3-deleting-node/
 #include<iostream>
 using namespace std;
 class Node{
