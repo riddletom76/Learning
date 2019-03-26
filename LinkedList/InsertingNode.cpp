@@ -1,4 +1,4 @@
-//https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/
+//My solution for: https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/
 #include<iostream>
 using namespace std;
 class Node{

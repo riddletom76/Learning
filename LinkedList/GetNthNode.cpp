@@ -1,4 +1,4 @@
-//My Solution for: https://www.geeksforgeeks.org/write-a-function-to-get-nth-node-in-a-linked-list/
+//My solution for: My Solution for: https://www.geeksforgeeks.org/write-a-function-to-get-nth-node-in-a-linked-list/
 #include<iostream>
 using namespace std;
 class Node{

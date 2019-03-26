@@ -1,4 +1,4 @@
-//https://www.geeksforgeeks.org/write-a-function-to-delete-a-linked-list/
+//My solution for: https://www.geeksforgeeks.org/write-a-function-to-delete-a-linked-list/
 #include<iostream>
 using namespace std;
 class Node{

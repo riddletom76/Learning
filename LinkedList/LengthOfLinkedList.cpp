@@ -1,4 +1,4 @@
-//https://www.geeksforgeeks.org/find-length-of-a-linked-list-iterative-and-recursive/
+//My solution for: https://www.geeksforgeeks.org/find-length-of-a-linked-list-iterative-and-recursive/
 #include<iostream>
 using namespace std;
 class Node{

@@ -1,4 +1,4 @@
-//https://www.geeksforgeeks.org/delete-a-linked-list-node-at-a-given-position/
+//My solution for: https://www.geeksforgeeks.org/delete-a-linked-list-node-at-a-given-position/
 #include<iostream>
 using namespace std;
 class Node{
