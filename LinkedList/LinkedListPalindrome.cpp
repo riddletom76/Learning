@@ -66,6 +66,56 @@ bool CheckPalindrome(Node* head){
     }
     return true;
 }
+
+/*Atrenate Solution */
+bool CheckPalindrome(Node* head){
+    int length=0;
+    Node* temp = head;
+    while(temp!=NULL){
+        temp = temp->next;
+        length++;
+    }
+    int mid = 0;
+    if(length%2==0){
+        mid = length/2;
+    }else{
+        mid = (length+1)/2;
+    }
+    int count = 0;
+    temp = head;
+    Node* prev = NULL;
+    while(count<=mid){
+        prev = temp;
+        temp = temp->next;
+        count++;
+    }
+    Reverse(&temp);
+    prev->next = NULL;
+    Node* temp2 = head;
+    while(temp2!=NULL){
+        if(temp2->data != temp->data){
+            return false;
+        }
+        temp2 = temp2->next;
+        temp = temp->next;
+    }
+    return true;
+}
+
+void ReverseLinkedList(Node** head){
+   Node* temp = *head;
+   Node* current = NULL;
+   Node* prev = NULL;
+   current = temp;
+   while(temp!=NULL){
+       temp = temp->next;
+       current->next = prev;
+       prev = current;
+       current = temp;
+   }
+   *head = prev;
+}
+
 int main(int argc, char const *argv[])
 {
     Node* head = NULL;
@@ -81,3 +131,7 @@ int main(int argc, char const *argv[])
     cout<<CheckPalindrome(head);
     return 0;
 }
+
+
+
+
