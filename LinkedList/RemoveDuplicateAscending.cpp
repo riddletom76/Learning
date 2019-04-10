@@ -39,24 +39,22 @@ void PrintLinkedList(Node* head){
 }
 
 void RemoveDuplicate(Node** head){
-    Node* temp = *head;
-    Node* curr = temp;
-    Node* prev = NULL;
-    while(temp->next!=NULL){
-        prev = curr;
-        curr = temp->next;
-        while((curr->data == prev->data) && (curr->next!=NULL)){
-            Node* temp1 = curr;
-            prev->next = curr->next;
-            curr = curr->next;
-            delete(temp1);
+    Node* current = *head;
+    Node* next = *head;
+    current=current->next;
+    while(current->next!= NULL){
+        if(next->data == current->data){
+            next->next = current->next;
+            delete(current);
+            current = next->next;
+        }else{
+            next = current;
+            current = current->next;
         }
-        if(prev->data == curr->data){
-            prev->next = NULL;
-            delete(curr);
-            break;
-        }
-        temp = temp->next;
+    }
+    if(next->data == current->data){
+        next->next = NULL;
+        delete(current);
     }
 }
 
@@ -65,11 +63,14 @@ int main(int argc, char const *argv[])
     Node* head = NULL;
     Push(&head,10);
     Push(&head,10);
+    Push(&head,10);
+    Push(&head,10);
+    Push(&head,10);
     Push(&head,20);
     Push(&head,20);
     Push(&head,20);
     Push(&head,30);
-    Push(&head,40); 
+    Push(&head,50); 
     PrintLinkedList(head);
     RemoveDuplicate(&head);
     PrintLinkedList(head);
