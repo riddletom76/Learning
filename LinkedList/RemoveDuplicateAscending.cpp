@@ -37,7 +37,26 @@ void PrintLinkedList(Node* head){
     }
     cout<<endl;
 }
+//recursive solution
+Node* RecursiveDuplicateRemoval(Node* head){
+    if(head == NULL){
+        return NULL;
+    }
+    if(head->next == NULL){
+        return head;
+    }
+    Node* temp = head->next;
+    if(head->data == temp->data){
+        head->next = temp->next;
+        delete(temp);
+        return RecursiveDuplicateRemoval(head);
+    }else{
+        head->next = RecursiveDuplicateRemoval(head->next);
+        return head;
+    }    
+}
 
+//Iteravive solution
 void RemoveDuplicate(Node** head){
     Node* current = *head;
     Node* next = *head;
@@ -72,7 +91,8 @@ int main(int argc, char const *argv[])
     Push(&head,30);
     Push(&head,50); 
     PrintLinkedList(head);
-    RemoveDuplicate(&head);
+    //RemoveDuplicate(&head);
+    head = RecursiveDuplicateRemoval(head);
     PrintLinkedList(head);
     return 0;
 }
