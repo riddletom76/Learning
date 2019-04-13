@@ -91,12 +91,10 @@ Node* InterSection(Node *head1, Node *head2)
             }
             if (first->data < second->data)
             {
-                cout<<first->data<<" is smaller than "<<second->data<<endl;
                 first = first->next;
             }
             else
             {
-                cout<<second->data<<" is smaller than "<<first->data<<endl;
                 second = second->next;
             }
         }
