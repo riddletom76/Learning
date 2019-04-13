@@ -46,29 +46,62 @@ void PrintLinkedList(Node *head)
     cout << endl;
 }
 
-Node *InterSection(Node *head1, Node *head2)
+//worst implementation - noob implementation
+// Node *InterSection(Node *head1, Node *head2)
+// {
+//     Node *temp = NULL;
+//     Node *first = head1;
+//     Node *second = head2;
+//     if (first != NULL && second != NULL)
+//     {
+//         while (first != NULL)
+//         {
+//             second = head2;
+//             while (second != NULL)
+//             {
+//                 if (second->data == first->data)
+//                 {
+//                     Push(&temp, second->data);
+//                     break;
+//                 }
+//                 second = second->next;
+//             }
+//             first = first->next;
+//         }
+//     }
+//     return temp;
+// }
+
+//alternate implementation
+Node* InterSection(Node *head1, Node *head2)
 {
-    Node *temp = NULL;
+    Node *dummyNode = NULL;
     Node *first = head1;
     Node *second = head2;
     if (first != NULL && second != NULL)
     {
-        while (first != NULL)
+        while (first != NULL && second != NULL)
         {
-            second = head2;
-            while (second != NULL)
+            if (first->data == second->data)
             {
-                if (second->data == first->data)
-                {
-                    Push(&temp, second->data);
-                    break;
-                }
+                Push(&dummyNode,first->data);
+                first = first->next;
+                second = second->next;
+                continue;
+            }
+            if (first->data < second->data)
+            {
+                cout<<first->data<<" is smaller than "<<second->data<<endl;
+                first = first->next;
+            }
+            else
+            {
+                cout<<second->data<<" is smaller than "<<first->data<<endl;
                 second = second->next;
             }
-            first = first->next;
         }
     }
-    return temp;
+    return dummyNode;
 }
 
 int main(int argc, char const *argv[])
