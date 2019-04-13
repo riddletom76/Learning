@@ -73,7 +73,7 @@ void PrintLinkedList(Node *head)
 // }
 
 //alternate implementation
-Node* InterSection(Node *head1, Node *head2)
+Node *InterSection(Node *head1, Node *head2)
 {
     Node *dummyNode = NULL;
     Node *first = head1;
@@ -84,7 +84,7 @@ Node* InterSection(Node *head1, Node *head2)
         {
             if (first->data == second->data)
             {
-                Push(&dummyNode,first->data);
+                Push(&dummyNode, first->data);
                 first = first->next;
                 second = second->next;
                 continue;
@@ -100,6 +100,32 @@ Node* InterSection(Node *head1, Node *head2)
         }
     }
     return dummyNode;
+}
+
+//recursion
+Node *InterSectionRecursive(Node *head1, Node *head2)
+{
+    if (head1 == NULL || head2 == NULL)
+    {
+        return NULL;
+    }
+    if (head1->data < head2->data)
+    {
+        return InterSectionRecursive(head1->next, head2);
+    }
+    else if (head1->data > head2->data)
+    {
+        return InterSectionRecursive(head1, head2->next);
+    }
+    else
+    {
+        Node *temp = new Node();
+        temp->data = head1->data;
+        head1 = head1->next;
+        head2 = head2->next;
+        temp->next = InterSectionRecursive(head1, head2);
+        return temp;
+    }
 }
 
 int main(int argc, char const *argv[])
@@ -119,8 +145,8 @@ int main(int argc, char const *argv[])
     PrintLinkedList(head1);
     cout << "second linked list " << endl;
     PrintLinkedList(head2);
-    head2 = InterSection(head1, head2);
+    Node *head3 = InterSectionRecursive(head1, head2); //InterSection(head1, head2);
     cout << "intersection of first and second linked list is " << endl;
-    PrintLinkedList(head2);
+    PrintLinkedList(head3);
     return 0;
 }
