@@ -1,3 +1,4 @@
+//my solution - https://www.geeksforgeeks.org/merge-sort-for-linked-list/
 #include<iostream>
 using namespace std;
  class Node{
@@ -33,44 +34,58 @@ using namespace std;
  	cout<<endl;
  }
 
- Node* GetMiddleNode(Node* head){
- 	if(head == NULL){
- 		return NULL;
- 	}else{
- 		Node* slow = head;
- 		Node* fast = head;
- 		while(fast->next!=NULL && fast->next->next!=NULL){
- 			slow = slow->next;
- 			fast = fast->next;
- 			fast = fast->next;
- 		}
- 		return slow;
+ int GetLengthOfLinkedList(Node* head){
+ 	int length = 0;
+ 	Node* temp = head;
+ 	while(temp!=NULL){
+ 		temp = temp->next;
+ 		length++;
  	}
+ 	return length;
  }
 
-Node* Merge(Node* first, Node* last){
+Node* Merge(Node* first, Node* second){
 	Node* newList = NULL;
-	
+	if(first == NULL){
+		return second;
+	}
+	if(second == NULL){
+		return first;
+	}
+	if(first->data <= second->data){
+		newList = first;
+		newList->next = Merge(first->next, second);
+	}else{
+		newList = second;
+		newList->next = Merge(first, second->next);
+	}
+	return newList;
 }
 
 Node* MergeSort(Node* head){
+	int mid = GetLengthOfLinkedList(head)/2;
 	Node* firstHalf = head;
-	Node* secondHalf = NULL;
-	Node* temp = GetMiddleNode(firstHalf);
-	secondHalf = temp->next;
-	temp->next = NULL;
+	if(head->next==NULL){
+		return head;
+	}
+	while(mid-1 > 0){
+		firstHalf = firstHalf->next;
+		mid--;
+	}
+	Node* secondHalf = firstHalf->next;
+	firstHalf->next = NULL;
+	firstHalf = head;
 	return Merge(MergeSort(firstHalf), MergeSort(secondHalf));
 }
 
  int main(){
  	Node* head = NULL;
- 	head = Push(head, 10);
- 	head = Push(head, 20);
- 	head = Push(head, 30);
- 	head = Push(head, 40);
- 	head = Push(head, 50);
- 	head = Push(head, 60);
+ 	head = Push(head, 31);
+ 	head = Push(head, 25);
+ 	head = Push(head, 54);
+ 	head = Push(head, 18);
+ 	head = Push(head, 5);
  	PrintLinkedList(head);
- 	Node* middle = GetMiddleNode(head);
- 	cout<<middle->data;
+ 	Node* result = MergeSort(head);
+ 	PrintLinkedList(result);
  }
