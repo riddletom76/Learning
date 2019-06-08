@@ -32,59 +32,7 @@ void PrintLinkedList(Node* head){
 	}
 	cout<<endl;
 }
-/*int Partition(Node* head, int first, int last){
-	int x = 0;
-	Node* temp = head;
-	while(x!=first){
-		x++;
-		temp = temp->next;
-	}
-	int pivot = temp->data;
-	int i = first;
-	int j = last;
-	Node* tempI = head;
-	Node* tempJ = head;
-	x = 0;
-	while(x!=first){
-		tempI = tempI->next;
-		x++;
-	}
-	x = 0;
-	while(x!=last){
-		tempJ = tempJ->next;
-		x++;
-	}
-	while(i<j){
-		while(tempI->data <= pivot){
-			i++;
-			tempI = tempI->next;
-		}
-		while(tempJ->data > pivot){
-			j--;
-			tempJ = tempJ->next;
-		}
-		int swapper = tempI->data;
-		tempI->data = tempJ->data;
-		tempJ->data = swapper;
-	}
-	x = 0;
-	temp = head;
-	while(x!=first){
-		x++;
-		temp = temp->next;
-	}
-	int swapper = tempJ->data;
-	tempJ->data = temp->data;
-	temp->data = swapper;
-	return j;
-}
-void QuickSort(Node** head, int first, int last){
-	if(first<last){
-		int pivotIndex = Partition(*head, first, last);
-		QuickSort(head, first, pivotIndex);
-		QuickSort(head, pivotIndex+1, last);
-	}
-}*/
+
 Node* GetLastNode(Node* head){
 	Node* temp = head;
 	while(temp->next != NULL){
@@ -99,8 +47,7 @@ Node* Partition(Node* head, Node* end, Node** newHead, Node** newTail){
 	Node* pivot = end;
 	Node* curr = head;
 	Node* tail = pivot;
-	//cout<<"Hello"<<endl;
-	
+		
 	while(curr!=pivot){
 		if(curr->data < pivot->data){
 			if(*newHead == NULL){
@@ -119,7 +66,6 @@ Node* Partition(Node* head, Node* end, Node** newHead, Node** newTail){
 			tail = curr;
 			curr = temp;
 		}
-		PrintLinkedList(curr);
 	}
 	if(*newHead == NULL){
 		*newHead = pivot;
