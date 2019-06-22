@@ -2,6 +2,7 @@
 #include"LinkedList.h"
 using namespace std;
 
+//iterative
 Node* DeleteGreaterRight(Node* head){
 	Node* temp = head;
 	Node* prev = NULL;
@@ -24,8 +25,19 @@ Node* DeleteGreaterRight(Node* head){
 	}	
 	return head;
 }
-//12->15->10->11->5->6->2->3->NULL 
-//10->20->30->40->50->60->NULL
+
+Node* Reverse(Node* head){
+	Node* temp = head;
+	Node* prev = NULL;
+	while(temp!=NULL){
+		Node* next = temp->next;
+		temp->next = prev;
+		prev = temp;
+		temp = next;
+	}
+	return prev;
+}
+
 int main(){
 	Node* head = NULL;
 	head = Push(head, 12);
