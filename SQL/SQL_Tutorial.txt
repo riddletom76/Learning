@@ -1,0 +1,205 @@
+SQL
+Relational Database Management System
+what is a database?
+	Any collection of related information is database
+		eg - PhoneBook, ShoppingList, TodoList
+
+DBMS
+	Special software program which helps a user 
+	to create and maintain database
+		- Makes it easy to manage large amts of information
+		- Handles security
+		- Backup
+DBMS is not the actual database, instead it is a software
+which allows to manage the database
+CRUD - create, read, update and delete
+
+Two main types of database
+Relational Database 			    Non- Relational
+- organises data into one or more         - organises data in anything but a 
+tables						traditional table
+	- Each table has columns and 	  - Key-value stores	
+	  rows				  - Documents, graphs
+	- A unique key identifies 
+	  each row
+
+Relational Database
+RDBMS is a software which lets you create adn maintain relational 
+database
+SQL - Structured query language is language for interacting with RDBMS
+	 - it is used to perform the CRUD operations in RDBMS
+Database query are requests which we make to the dbms 
+to get a specific piece of information
+
+Tables and Keys
+Primary key is an attribute which uniquely identifies a 
+specific row in a table
+	no other row can have the same value for the primary key value
+Natural Key - key that has a mapping to the real world and is primary key
+Foreign Key - an attribute in a table which relates to another table
+	it has the values of primary key of another table
+Composite Key - if two attribute together identify each row uniquely
+		then they form something called composite key, but
+		individually they can't identify each row uniquely
+
+
+SQL Basics
+SQL - language used to interact with the RDBMS
+
+Creating, Altering and Deleting Tables
+Basic datatypes in SQL
+	INT - integer
+	DECIMAL(M,N) - 
+	VARCHAR(l) - String of length 'l'
+	BLOB - Binary Large object
+	DATE - 'YYYY-MM-DD'
+	TIMESTAMP 'YYYY-MM-DD HH:MM:SS'
+
+CREATE TABLE student(
+	student_id INT PRIMARY KEY,
+	name, VARCHAR(10),
+	major, VARCHAR(20)
+);
+
+DESCRIBE student; //this tells what we have described in the table
+
+//to delete the table
+DROP TABLE student;
+
+//to modify the table
+ALTER TABLE student ADD gpa DEIMAL(3,2);
+
+//to remove a column from the table
+ALTER TABLE student DROP COLUMN gpa;
+
+//inserting data in the database tables
+INSERT INTO student VALUES(1,'Jack','Biology');
+
+//to get the content of table
+SELECT * FROM student
+
+INSERT INTO student VALUES(2,'KATE','Sociology')
+
+//if one of the attribute shouldn't be null
+//mark it as NOT NULL
+CREATE TABLE student(
+	studenta_id INT PRIMARY KEY,
+	name VARCHAR(20) NOT NULL
+);
+
+//if a certain attribute has to be unique along with the primary key 
+//mark it as UNIQUE
+CREATE TABLE student(
+	studenta_id INT,
+	name VARCHAR(20) NOT NULL,
+	major VARCHAR(20) UNIQUE,
+	PRIMARY KEY(student_id)
+);
+
+//to specify a default value for a particular field
+//mark it as DEFAULT <VALUE>
+//in case the default value is not specified NULL is
+//stored in the database if any information is nto provided
+CREATE TABLE student(
+	student_id INT,
+	name VARCHAR(20) DEFAULT 'student_name'
+);
+
+//update and delete
+UPDATE student 
+SET major = 'Bio'
+WHERE major = 'Biology';
+
+//in order to change  multiple columns
+UPDATE student
+SET major = 'Bio', name = 'Rishabh'
+WHERE student_id = 4;
+
+//deleting a row in table
+DELETE from student
+WHERE student_id = 5;
+
+//basic queries
+SELECT * FROM student; //this means select all the columns from the student table
+
+//to order 
+SELECT * FROM student
+ORDER BY name;
+
+//to order in descending 
+SELECT * FROM student
+ORDER BY name DESC;
+
+//in case we are ordering by more than two columns
+//it'll be ordered in order of columns mentioned in the query
+SELECT * FROM student
+ORDER BY name, student_id;
+//the above will be ordered by name, if there are two rows with same name,
+//then the rows will be ordered by the student_id
+
+DROP TABLE student//this will delete the student table
+
+CREATE TABLE employee(
+	emp_id INT PRIMARY KEY,
+	branch_id INT	
+);
+
+CREATE TABLE branch(
+	branch_id PRIMARY KEY,
+	mgr_id INT
+	FOREIGN KEY(mgr_id) REFERENCES emmployee(emp_id) ON DELETE SET NULL //this is done for foreign key
+);
+//as the branch table is created after the employee
+//now we can set the branch_id of employee 
+// as the foriegn key
+ALTER TABLE employee 
+ADD FOREIGN KEY(branch_id) 
+REFERENCES branch(branch_id) 
+ON DELETE SET NULL;
+
+CREATE TABLE understanding_compositeKey(
+	first_key INT,
+	second_key INT,
+	PRIMARY KEY(first_key, second_key)
+);
+
+//to get all the unique branch_id
+SELECT DISTINCT branch_id
+from employee;
+
+//to count the number of employee
+SELECT COUNT(emp_id)
+FROM employee
+//this will give count of rows which have a non-null value for emp_id
+
+
+//to get the number of emp who are female
+//and their age is more than 1st Jan 1971
+SELECT COUNT(emp_id)
+FROM employee
+WHERE sex = 'F' AND date_Of_Birth > '1971-01-01';
+
+//to get number of male and female emp
+SELECT COUNT(sex), sex
+FROM employee
+GROUP BY sex;
+
+//to match the name '%' - any number of char to match
+//'_' to match any one char
+SELECT * 
+from client 
+WHERE clinet_name LIKE '%llc'
+
+SELECT *
+FROM bracnh_supplier
+WHERE supplier_name LIKE '% Lable%'
+
+//to combine two queries we use union
+SELECT first_name 
+FROM employee
+UNION 
+SELECT branch_name
+FROM branch;
+//criteria to UNION is 
+//both the colum,ns should have smae number of values
+//and the data type should also be same
