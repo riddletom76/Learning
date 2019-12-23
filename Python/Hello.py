@@ -396,3 +396,12 @@ print(student1.is_an_adult())
 #from while initializing the new class
 #For ex; if you want to inherit Car class in class Tesla
 # class Tesla(Car): # this is how the instantiation will be
+
+def function_name(x):
+    x = [1,2]
+    print(x)
+
+hello_string = [1,2,4,5]
+print(hello_string)
+function_name(hello_string)
+print(hello_string)
