@@ -24,7 +24,7 @@ tables						traditional table
 	  each row
 
 Relational Database
-RDBMS is a software which lets you create adn maintain relational 
+RDBMS is a software which lets you create and maintain relational 
 database
 SQL - Structured query language is language for interacting with RDBMS
 	 - it is used to perform the CRUD operations in RDBMS
