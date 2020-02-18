@@ -1,0 +1,26 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>
+            Rishabh's Video Player
+        </title>
+    </head>
+    <body>
+        
+        <input id="fileName" type="text" />
+        <button onclick="write()">
+            Play!
+        </button>
+        <video id="videoPlayerId" controls>
+
+        </video>
+        <script>
+            function write(){
+                var videoPlayer = document.getElementById("videoPlayerId");
+                videoPlayer.src = document.getElementById("fileName").value;
+                console.log(videoPlayer.src);
+                videoPlayer.play();
+            }
+        </script>
+    </body>
+</html>
