@@ -1,5 +1,10 @@
 let email = "rishabhgsharma95@gmail.com";
-let result = email.replace('r', 's');
+let name = "Rishabh Sharma"
+
+let result = name + email;
+
+console.log(result);
+result = `${name} ${email}`;
 console.log(result);
 
-//the replace will only replace the first occurance of the character.
+//we can use `` to interpolate the variables in a string.
