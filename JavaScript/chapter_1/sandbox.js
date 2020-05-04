@@ -1,9 +1,9 @@
 let email = "rishabhgsharma95@gmail.com";
-let result = email.slice(0,5);
+let result = email.substr(0, 10);   
 console.log(result);
-result = email.slice(2,5);
+result = email.substr(4,10);
 console.log(result);
-
-//the first index in slice  determines the starting point 
-//the second index shows the end point till where the slice should happen, which means excluding
-//the element which is present at that index.
+//substr is the substring method for the string data type
+//the first argument is the starting index for the method
+//the second argument is the number of characters it must include in the substring
+//Note: unlike slice the second argument does not correspond to the end index
