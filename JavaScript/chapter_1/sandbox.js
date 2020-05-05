@@ -1,20 +1,22 @@
-//type conversion
-//converting one data type into another
-let score = "100";
-console.log(typeof score);
-console.log(score + 1);
+//function declaration
+function greet(){
+    console.log('Hello, there!');
+}
 
-score = Number(score);
-console.log(score + 1);
+//function expression   
+let speak = function(){
+    console.log('Hello, this is function expression');
+}
 
-console.log(typeof score);
+greet();
+// greet();
+greet();
+speak();
+speak();
+speak();
 
-let result = Boolean(0);
-console.log(result);
-//zero are falsy values
-console.log(Boolean(-1));
-//any other number than 0 is a truthy value
-console.log(Boolean('0'));
-//any string is a truthy value
-console.log(Boolean(''));
-//empty strings are falsy values
+//the difference between function declaration and function expression 
+// in case of function declaration the javascript performs hoisting by which it
+// puts the function on top 
+//in case of function expression hoisting is not supported hence, 
+//if we declare a function expression below the function invokation it'll result in an error
