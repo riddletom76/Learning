@@ -1,22 +1,12 @@
-//function declaration
-function greet(){
-    console.log('Hello, there!');
-}
+//arrow functions
+const pi = 3.14;
+// let calArea = (radius) => {
+//     return pi * (radius ** 2);
+// };
 
-//function expression   
-let speak = function(){
-    console.log('Hello, this is function expression');
-}
+let calArea = (radius) => pi * (radius ** 2);
 
-greet();
-// greet();
-greet();
-speak();
-speak();
-speak();
+console.log(calArea(5));
 
-//the difference between function declaration and function expression 
-// in case of function declaration the javascript performs hoisting by which it
-// puts the function on top 
-//in case of function expression hoisting is not supported hence, 
-//if we declare a function expression below the function invokation it'll result in an error
+//in the above there are two ways to create the arrow functions 
+//if we dont want to write the return keyword then just remove the flower brace
