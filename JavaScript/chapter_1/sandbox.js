@@ -1,13 +1,20 @@
-//loose vs strict comparison
+//type conversion
+//converting one data type into another
+let score = "100";
+console.log(typeof score);
+console.log(score + 1);
 
-let age = 24;
-console.log(age == '24');
-//in the above case javascript tries to convert the string value into number and then 
-//evaluates the comparison which results in true
-//this is loose  comparison
+score = Number(score);
+console.log(score + 1);
 
-console.log(age === 24);
-console.log(age === '24');
-//in the above case javascript tries to check if both the variables have equal value
-//and they have the same data type then it evaluates to true
-//this is strict comaprison
+console.log(typeof score);
+
+let result = Boolean(0);
+console.log(result);
+//zero are falsy values
+console.log(Boolean(-1));
+//any other number than 0 is a truthy value
+console.log(Boolean('0'));
+//any string is a truthy value
+console.log(Boolean(''));
+//empty strings are falsy values
