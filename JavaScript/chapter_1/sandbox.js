@@ -1,12 +1,6 @@
-//arrow functions
-const pi = 3.14;
-// let calArea = (radius) => {
-//     return pi * (radius ** 2);
-// };
+//functions vs methods
 
-let calArea = (radius) => pi * (radius ** 2);
-
-console.log(calArea(5));
-
-//in the above there are two ways to create the arrow functions 
-//if we dont want to write the return keyword then just remove the flower brace
+//the difference lies in the way we call them and where they are declared
+//in case of functions they can be declared in the same place and can be called independently
+//in case of methods the method is called with respect to an object instance i.e. method is invoked 
+//only to act on an object
