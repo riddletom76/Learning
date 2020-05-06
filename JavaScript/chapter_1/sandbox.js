@@ -1,12 +1,23 @@
-//foreach and callback
+//objects and methods
+let obj = {
+    name: "Rishabh",
+    email: "rishabhgsharma95@gmail.com",
+    login: function(){
+        console.log("rishabh logged in");
+    },
+    logout(){
+        console.log("rishabh logged out");
+    },
+    methodForThis(){
+        console.log(this.name);
+    }
+};
 
-let people = ['person','person','person','person','person'];
-let html = "";
-let logPerson = (person, index) => {
-    html += (`<li>Hello ${person} - ${index}</li>`);
-}
+console.log(obj);
+console.log(obj.login());
+console.log(obj.logout());
+console.log(obj.methodForThis());
 
-people.forEach(logPerson);
-
-let ul = document.getElementById("list");
-ul.innerHTML = html;
+//important points 
+//this does not work with arrow functions hence the above are the two variations in which the methods
+//can be written in order to use this as well;
