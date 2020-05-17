@@ -1,13 +1,9 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Main from './components/Main';
-import Footer from './components/Footer';
+import BasicTodo from './components/BasicTodo';
 function App() {
   return (
     <div>
-      <Navbar />
-      <Main />
-      <Footer />
+      <BasicTodo />
     </div>
   );
 }
