@@ -1,23 +1,19 @@
-//objects and methods
-let obj = {
-    name: "Rishabh",
-    email: "rishabhgsharma95@gmail.com",
-    login: function(){
-        console.log("rishabh logged in");
-    },
-    logout(){
-        console.log("rishabh logged out");
-    },
-    methodForThis(){
-        console.log(this.name);
-    }
-};
+//what is DOM?
+//QuerySelector?
+//use a queryselector to insert an unordered list in the html page
+//getting and setting attributes of a tag
+//use the queryselector to set a class which will have an associated css attribute set
+//add and remove classes
 
-console.log(obj);
-console.log(obj.login());
-console.log(obj.logout());
-console.log(obj.methodForThis());
-
-//important points 
-//this does not work with arrow functions hence the above are the two variations in which the methods
-//can be written in order to use this as well;
+let bodyElement = document.querySelector('#list');
+console.log(bodyElement);
+let list = document.createElement('ul');
+let item = document.createElement('li');
+item.innerHTML = "first item";
+list.appendChild(item);
+document.getElementById('list').appendChild(list);
+bodyElement.setAttribute("class", 'rishabh')
+console.log(bodyElement.getAttribute('class'))
+let classList = document.getElementById('list').classList;
+classList.add('sharma');
+console.log(bodyElement.getAttribute('class'))
