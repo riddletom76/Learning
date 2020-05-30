@@ -5,6 +5,8 @@ import ContactInfo from './components/ContactInfo';
 import QuestionAnswer from './components/QuestionAnswer';
 import products from './components/vsSchoolProducts';
 import Product from './components/Product';
+import Counter from "./components/Counter";
+
 // function App() {
 //   return (
 //     <BasicTodo />
@@ -14,15 +16,11 @@ import Product from './components/Product';
 class App extends React.Component{
   constructor(){
     super();
-    this.state = {
-      logged: false
-    }
   }
   render(){
     return(
       <div>
-        {/* <h1>The user is logged{this.state.logged ?" in":" out"}</h1> */}
-        <BasicTodo />
+        <Counter />
       </div>
     )
   }
