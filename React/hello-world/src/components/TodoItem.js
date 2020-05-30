@@ -15,10 +15,16 @@ class TodoItem extends React.Component{
     constructor(){
         super();
     }
+    
     render(){
         return (
             <div class="todo-item">
-                <input id={this.props.id} type="checkbox" defaultChecked={this.props.isChecked} value={this.props.text} />
+                <input 
+                    id={this.props.id} 
+                    type="checkbox" 
+                    checked={this.props.isChecked} 
+                    onChange={() => {this.props.handleChange(this.props.id)}} 
+                    value={this.props.text} />
                 <label for={this.props.id}>{this.props.text}</label>
             </div>
         )

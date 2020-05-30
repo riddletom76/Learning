@@ -18,9 +18,23 @@ class BasicTodo extends React.Component{
         this.state = {
             todoItems: todosData
         }
+        this.handleChange = this.handleChange.bind(this);
     }
+
+    handleChange(id){
+        this.setState(prevState => {
+            let todoItems = prevState.todoItems.map(item => {
+                if(item.id == id){
+                    item.completed = !item.completed
+                }
+            })
+            return todoItems;
+        })
+        console.log(this.state);
+    }
+
     render(){
-        const todoRenderItems = this.state.todoItems.map(item => <TodoItem text={item.text} isChecked={item.completed} key={item.id} id={item.id} />);
+        const todoRenderItems = this.state.todoItems.map(item => <TodoItem text={item.text} isChecked={item.completed} key={item.id} id={item.id} handleChange={this.handleChange}/>);
         return(
             <div>
                 {todoRenderItems}
