@@ -11,7 +11,7 @@ class ConditionalRendering extends React.Component
 
     componentDidMount(){
         setTimeout(()=>{
-            this.setState({isloading: false})}, 1500)
+            this.setState({isloading: false})}, 1500)1
     }
 
     render(){

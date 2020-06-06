@@ -7,7 +7,9 @@ import BasicTodo from './components/BasicTodo';
 // import Product from './components/Product';
 // import Counter from "./components/Counter";
 // import Clock from './components/Clock';
-import ConditionalRendering from './components/ConditionalRendering';
+// import ConditionalRendering from './components/ConditionalRendering';
+import Login from './components/Login';
+import Button from './components/Button';
 // function App() {
 //   return (
 //     <BasicTodo />
@@ -17,11 +19,23 @@ import ConditionalRendering from './components/ConditionalRendering';
 class App extends React.Component{
   constructor(){
     super();
+    this.state = {
+      isLoggedIn: false
+    }
+    this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick(){
+    this.setState(prevState =>
+        {
+            return {isLoggedIn: !prevState.isLoggedIn}
+        }
+    )
   }
   render(){
     return(
       <div>
-        <ConditionalRendering />
+        <Button method={this.handleClick} message={this.state.isLoggedIn ? "LogOut": "LogIn"}/>
+        <Login />
       </div>
     )
   }
