@@ -9,7 +9,8 @@ class BasicForm extends React.Component{
 			firstName: "",
 			lastName: "",
 			additionalInfo: "",
-			isChecked: false
+			isChecked: false,
+			gender:""
 		}
 	}
 
@@ -33,8 +34,13 @@ class BasicForm extends React.Component{
 				<label>
 					<input type="checkbox" name="isChecked" checked={this.state.isChecked} onChange={this.handleChange} /> Is Checked?
 				</label>
+				<br />
+				<label><input type="radio" name="gender" checked={this.state.gender === "male"} onChange={this.handleChange} value="male" />Male</label>
+				<br />
+				<label><input type="radio" name="gender" checked={this.state.gender === "female"} onChange={this.handleChange} value="female" />Female</label>
 			</form>
 			<p>{this.state.firstName} {this.state.lastName} Additional Info - {this.state.additionalInfo}</p>
+			<p>{this.state.gender}</p>
 			</div>
 		)
 	}
