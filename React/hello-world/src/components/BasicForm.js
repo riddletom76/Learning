@@ -10,7 +10,8 @@ class BasicForm extends React.Component{
 			lastName: "",
 			additionalInfo: "",
 			isChecked: false,
-			gender:""
+			gender:"",
+			favColor: ""
 		}
 	}
 
@@ -38,9 +39,19 @@ class BasicForm extends React.Component{
 				<label><input type="radio" name="gender" checked={this.state.gender === "male"} onChange={this.handleChange} value="male" />Male</label>
 				<br />
 				<label><input type="radio" name="gender" checked={this.state.gender === "female"} onChange={this.handleChange} value="female" />Female</label>
+				<br />
+				<label>Favourite Color:
+					<select name="favColor" value={this.state.favColor} onChange={this.handleChange}>
+						<option value="red">Red</option>
+						<option value="green">Green</option>
+						<option value="blue">Blue</option>
+						<option value="black">Black</option>
+					</select>
+				</label>
 			</form>
 			<p>{this.state.firstName} {this.state.lastName} Additional Info - {this.state.additionalInfo}</p>
 			<p>{this.state.gender}</p>
+			<p>Favourite Color is - {this.state.favColor}</p>
 			</div>
 		)
 	}
