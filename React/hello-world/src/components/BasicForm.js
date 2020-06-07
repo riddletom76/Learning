@@ -7,13 +7,19 @@ class BasicForm extends React.Component{
 		this.handleChange = this.handleChange.bind(this)
 		this.state = {
 			firstName: "",
-			lastName: ""
+			lastName: "",
+			additionalInfo: "",
+			isChecked: false
 		}
 	}
 
 	handleChange(event){
+		const {name, value, type, checked} = event.target
+		type==="checkbox" ? this.setState({
+			[name]: checked
+		}):
 		this.setState({
-			[event.target.name]: event.target.value
+			[name]: value
 		})
 	}
 
@@ -21,10 +27,14 @@ class BasicForm extends React.Component{
 		return(
 			<div>
 			<form>
-				<input type="text" onChange={this.handleChange} value={this.state.firstName} name="firstName" />
-				<input type="text" onChange={this.handleChange} value={this.state.lastName} name="lastName" />
+				<input type="text" onChange={this.handleChange} value={this.state.firstName} name="firstName" placeholder="First Name" />
+				<input type="text" onChange={this.handleChange} value={this.state.lastName} name="lastName" placeholder="Last Name" />
+				<textarea name="additionalInfo" placeholder="Default value" value={this.state.additionalInfo} onChange={this.handleChange} />
+				<label>
+					<input type="checkbox" name="isChecked" checked={this.state.isChecked} onChange={this.handleChange} /> Is Checked?
+				</label>
 			</form>
-			<p>{this.state.firstName} {this.state.lastName}</p>
+			<p>{this.state.firstName} {this.state.lastName} Additional Info - {this.state.additionalInfo}</p>
 			</div>
 		)
 	}
