@@ -1,6 +1,6 @@
 import React from 'react';
 // import Main from './components/Main';
-import BasicTodo from './components/BasicTodo';
+// import BasicTodo from './components/BasicTodo';
 // import ContactInfo from './components/ContactInfo';
 // import QuestionAnswer from './components/QuestionAnswer';
 // import products from './components/vsSchoolProducts';
@@ -10,6 +10,8 @@ import BasicTodo from './components/BasicTodo';
 // import ConditionalRendering from './components/ConditionalRendering';
 // import Login from './components/Login';
 // import Button from './components/Button';
+// import DataFetch from './components/DataFetch';
+import BasicForm from './components/BasicForm';
 // function App() {
 //   return (
 //     <BasicTodo />
@@ -21,7 +23,7 @@ class App extends React.Component{
   render(){
     return(
       <div>
-        <BasicTodo />
+        <BasicForm />
       </div>
     )
   }
