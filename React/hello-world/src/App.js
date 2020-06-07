@@ -12,7 +12,9 @@ import React from 'react';
 // import Button from './components/Button';
 // import DataFetch from './components/DataFetch';
 // import BasicForm from './components/BasicForm';
-import TravelForm from './components/TravelForm';
+// import TravelForm from './components/TravelForm';
+import Header from './components/Header';
+import MemeGenerator from './components/MemeGenerator';
 // function App() {
 //   return (
 //     <BasicTodo />
@@ -24,7 +26,8 @@ class App extends React.Component{
   render(){
     return(
       <div>
-        <TravelForm />
+        <Header />
+        <MemeGenerator />        
       </div>
     )
   }

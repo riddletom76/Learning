@@ -1,0 +1,10 @@
+header{
+	height: 50px;
+	width: 100%;
+	background: purple;
+}
+
+#HeaderImage{
+	height: 40px;
+	width: 50px;
+}
