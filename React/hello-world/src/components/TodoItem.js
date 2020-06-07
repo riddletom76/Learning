@@ -17,6 +17,9 @@ class TodoItem extends React.Component{
     }
     
     render(){
+        const CompletedStyle = {
+            fontStyle: "italic"
+        }
         return (
             <div class="todo-item">
                 <input 
@@ -25,7 +28,7 @@ class TodoItem extends React.Component{
                     checked={this.props.isChecked} 
                     onChange={() => {this.props.handleChange(this.props.id)}} 
                     value={this.props.text} />
-                <label for={this.props.id}>{this.props.text}</label>
+                <label style={this.props.isChecked ? CompletedStyle : null} for={this.props.id}>{this.props.text}</label>
             </div>
         )
     }
