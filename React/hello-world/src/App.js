@@ -11,7 +11,8 @@ import React from 'react';
 // import Login from './components/Login';
 // import Button from './components/Button';
 // import DataFetch from './components/DataFetch';
-import BasicForm from './components/BasicForm';
+// import BasicForm from './components/BasicForm';
+import TravelForm from './components/TravelForm';
 // function App() {
 //   return (
 //     <BasicTodo />
@@ -23,7 +24,7 @@ class App extends React.Component{
   render(){
     return(
       <div>
-        <BasicForm />
+        <TravelForm />
       </div>
     )
   }
