@@ -1,15 +1,10 @@
 import React from 'react';
 
-class Button extends React.Component{
-    constructor(props){
-        super(props);
-        // this.handleClick = this.handleClick.bind(this)
-    }
-    
+class Button extends React.Component{    
     render(){
         return (
             <div>
-                <Button onClick={this.props.method}>{this.props.message}</Button>
+                <button onClick={this.props.method}>{this.props.message}</button>
             </div>
         )
     }
