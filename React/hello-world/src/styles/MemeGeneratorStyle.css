@@ -1,10 +1,47 @@
-header{
-	height: 50px;
-	width: 100%;
+.header img{
+	float: left;
+	height: 100px;
+	margin: 1px;
+	padding-top: 10px;
+	padding-left: 10px;
+	align-content: center;
+}
+.header h1{
+	position: relative;
+	text-align: center;
+	padding-top: 20px;
+}
+.header{
 	background: purple;
+	height: 150px;
 }
 
-#HeaderImage{
-	height: 40px;
-	width: 50px;
+.input{
+	margin-left: 30%;
+}
+
+.box .topText{
+	position: absolute;
+	top: 10px;
+	left: 50%;
+  	transform: translate(-50%, -50%);
+  	color: yellow;
+}
+
+.box .bottomText{
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+  	transform: translate(-50%, -50%);
+  	color: yellow;	
+}
+
+.box{
+	position: relative;
+	text-align: center;
+}
+
+.box img{
+	height: 400px;
+	width: 400px;
 }
