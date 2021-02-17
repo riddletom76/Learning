@@ -28,7 +28,7 @@ namespace KudVenkat
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -36,25 +36,10 @@ namespace KudVenkat
             }
 
             app.UseRouting();
-
-            app.Use(async (context, next) =>
-            {
-                logger.LogInformation("MW1: incoming request");
-                    await next();
-                logger.LogInformation("MW1: outgoing response");
-            });
-
-            app.Use(async (context, next) =>
-            {
-                logger.LogInformation("MW2: incoming request");
-                await next();
-                logger.LogInformation("MW2: outgoing response");
-            });
-
+            app.UseStaticFiles();
             app.Run(async context =>
             {
-                await context.Response.WriteAsync("Hello from third Middleware!");
-                logger.LogInformation("MW3: Request handled and response produced!");
+                await context.Response.WriteAsync("Hello World!");
             });
         }
     }
