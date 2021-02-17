@@ -32,7 +32,11 @@ namespace KudVenkat
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                DeveloperExceptionPageOptions developerExceptionPageOptions = new DeveloperExceptionPageOptions()
+                {
+                    SourceCodeLineCount = 1
+                };
+                app.UseDeveloperExceptionPage(developerExceptionPageOptions);
             }
 
             app.UseRouting();
@@ -41,12 +45,13 @@ namespace KudVenkat
             //defaultFileOptions.DefaultFileNames.Add("foo.html");
             //app.UseDefaultFiles(defaultFileOptions);
             //app.UseStaticFiles();
-            FileServerOptions fileServerOptions = new FileServerOptions();
-            fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
-            fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
-            app.UseFileServer(fileServerOptions);
+            //FileServerOptions fileServerOptions = new FileServerOptions();
+            //fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
+            //fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
+            //app.UseFileServer(fileServerOptions);
             app.Run(async context =>
             {
+                throw new Exception("Madeup Exception");
                 await context.Response.WriteAsync("Hello World!");
             });
         }
