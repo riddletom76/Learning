@@ -36,11 +36,15 @@ namespace KudVenkat
             }
 
             app.UseRouting();
-            DefaultFilesOptions defaultFileOptions = new DefaultFilesOptions();
-            defaultFileOptions.DefaultFileNames.Clear();
-            defaultFileOptions.DefaultFileNames.Add("foo.html");
-            app.UseDefaultFiles(defaultFileOptions);
-            app.UseStaticFiles();
+            //DefaultFilesOptions defaultFileOptions = new DefaultFilesOptions();
+            //defaultFileOptions.DefaultFileNames.Clear();
+            //defaultFileOptions.DefaultFileNames.Add("foo.html");
+            //app.UseDefaultFiles(defaultFileOptions);
+            //app.UseStaticFiles();
+            FileServerOptions fileServerOptions = new FileServerOptions();
+            fileServerOptions.DefaultFilesOptions.DefaultFileNames.Clear();
+            fileServerOptions.DefaultFilesOptions.DefaultFileNames.Add("foo.html");
+            app.UseFileServer(fileServerOptions);
             app.Run(async context =>
             {
                 await context.Response.WriteAsync("Hello World!");
