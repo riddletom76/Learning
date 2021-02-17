@@ -36,12 +36,15 @@ namespace KudVenkat
 
             app.UseRouting();
 
-            app.UseEndpoints(endpoints =>
+            app.Use(async (context, next) =>
             {
-                endpoints.MapGet("/", async context =>
+                    await context.Response.WriteAsync("Hello from first Middleware!");
+                    await next();
+            });
+
+            app.Run(async context =>
                 {
-                    await context.Response.WriteAsync(_config["Key"]);
-                });
+                    await context.Response.WriteAsync("Hello from second Middleware!");
             });
         }
     }
