@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace KudVenkat
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
         {
             if (env.IsDevelopment())
             {
@@ -38,13 +39,22 @@ namespace KudVenkat
 
             app.Use(async (context, next) =>
             {
-                    await context.Response.WriteAsync("Hello from first Middleware!");
+                logger.LogInformation("MW1: incoming request");
                     await next();
+                logger.LogInformation("MW1: outgoing response");
+            });
+
+            app.Use(async (context, next) =>
+            {
+                logger.LogInformation("MW2: incoming request");
+                await next();
+                logger.LogInformation("MW2: outgoing response");
             });
 
             app.Run(async context =>
-                {
-                    await context.Response.WriteAsync("Hello from second Middleware!");
+            {
+                await context.Response.WriteAsync("Hello from third Middleware!");
+                logger.LogInformation("MW3: Request handled and response produced!");
             });
         }
     }
