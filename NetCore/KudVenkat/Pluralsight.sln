@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KudVenkat", "KudVenkat\KudVenkat.csproj", "{28075531-EE55-4652-A14F-A9CA145512D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft", "Microsoft\Microsoft.csproj", "{55F4A0EF-3B8A-4D62-A83C-245F8A781120}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameConsole", "GameConsole\GameConsole.csproj", "{E73696DB-05B4-4F16-ADE1-0A76C7EA5169}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GradeBook", "NewApplication\src\GradeBook\GradeBook.csproj", "{65790806-8CD1-426F-9DCA-BB52318C24FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OdeToFood", "OdeToFood\OdeToFood.csproj", "{37AFF3BF-9D16-4809-AB25-2995BD573A6B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OdeToFood.Core", "OdeToFood.Core\OdeToFood.Core.csproj", "{C467B509-C495-4E0D-B79E-954C957FDBD1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OdeToFood.Data", "OdeToFood.Data\OdeToFood.Data.csproj", "{F277236F-126A-47C3-8D84-413381243EBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28075531-EE55-4652-A14F-A9CA145512D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28075531-EE55-4652-A14F-A9CA145512D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28075531-EE55-4652-A14F-A9CA145512D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28075531-EE55-4652-A14F-A9CA145512D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55F4A0EF-3B8A-4D62-A83C-245F8A781120}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F4A0EF-3B8A-4D62-A83C-245F8A781120}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55F4A0EF-3B8A-4D62-A83C-245F8A781120}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55F4A0EF-3B8A-4D62-A83C-245F8A781120}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E73696DB-05B4-4F16-ADE1-0A76C7EA5169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E73696DB-05B4-4F16-ADE1-0A76C7EA5169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E73696DB-05B4-4F16-ADE1-0A76C7EA5169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E73696DB-05B4-4F16-ADE1-0A76C7EA5169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65790806-8CD1-426F-9DCA-BB52318C24FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65790806-8CD1-426F-9DCA-BB52318C24FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65790806-8CD1-426F-9DCA-BB52318C24FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65790806-8CD1-426F-9DCA-BB52318C24FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37AFF3BF-9D16-4809-AB25-2995BD573A6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37AFF3BF-9D16-4809-AB25-2995BD573A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37AFF3BF-9D16-4809-AB25-2995BD573A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37AFF3BF-9D16-4809-AB25-2995BD573A6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C467B509-C495-4E0D-B79E-954C957FDBD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C467B509-C495-4E0D-B79E-954C957FDBD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C467B509-C495-4E0D-B79E-954C957FDBD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C467B509-C495-4E0D-B79E-954C957FDBD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F277236F-126A-47C3-8D84-413381243EBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F277236F-126A-47C3-8D84-413381243EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F277236F-126A-47C3-8D84-413381243EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F277236F-126A-47C3-8D84-413381243EBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36BA1806-7636-4ED8-B608-17AE2F98B985}
+	EndGlobalSection
+EndGlobal
